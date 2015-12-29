@@ -1,0 +1,13 @@
+<%= form_for @mom do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name, :require => true %>
+	<br>
+  <%= f.label :job %>:
+  <%= f.text_field :job %>
+	<br>
+  <%= f.label :age %>:
+  <%= f.text_field :age %>
+  <br>
+
+  <%= @mom.persisted? ? (f.submit value: "update mom", id: 'special-button') : (f.submit value: "add mom", id: 'special-button') %>
+<% end %>

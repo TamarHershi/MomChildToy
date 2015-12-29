@@ -1,0 +1,17 @@
+<%= link_to "Back to your profile", child_path(@child.id) %>
+<h1 class="head">Hi <%= @child.name %>! Here are your toys </h1>
+<table>
+  <th>Toy </th>
+  <th> Color </th>
+  <% @toys.each do |toy| %>
+    <tr>
+      <td> <%= toy.kind %> </td>
+      <td> <%= toy.color %> </td>
+      <td> <%= link_to "Edit", edit_child_toy_path(toy.child_id, toy.id) %> </td>
+      <td> <%= link_to 'Delete', child_toy_path(toy.child_id, toy.id), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<br>
+<%= link_to "Add a new toy", new_child_toy_path(@child.id)%>

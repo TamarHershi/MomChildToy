@@ -1,0 +1,9 @@
+<div class="mom">
+<%= image_tag("mom2.png") %>
+<h1>Enter your Profile</h1>
+  <% @moms.each do |mom| %>
+    <li><%= link_to mom.name, mom_path(mom.id) %></li>
+<% end %>
+
+<%= link_to "Add a new mom", new_mom_path %>
+</div>

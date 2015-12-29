@@ -1,4 +1,34 @@
 Rails.application.routes.draw do
+  root 'users#index'
+
+  resources :moms do
+    resources :children do
+
+    end
+  end
+
+
+  resources :children do
+    resources :toys do
+    end
+  end
+
+  resources :children do
+    collection do
+      get '/children/:id/toys', action: "show_toys", as: "show_toys"
+    end
+  end
+
+  resources :users do
+  end
+
+  resources :moms do
+    get 'show_children', action: "show_children", as: "show_children"
+  end
+
+  resources :toys do
+
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

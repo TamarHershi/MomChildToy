@@ -1,0 +1,15 @@
+<%= link_to "back to your Profile", mom_path(@mom.id) %>
+<h1> here are your kids </h1>
+<% @kids.each do |kid| %>
+  <p class="head"> Child Name: <%= kid.name %> </p>
+  <% if Child.girl?(kid) %>
+    <li> She is <%= kid.age %> years old </li>
+    <li> She has <%= Child.many_toys(kid) %> </li>
+  <% else %>
+    <li> He is <%= kid.age %> years old </li>
+    <li> He has <%= Child.many_toys(kid) %> </li>
+  <% end %>
+<% end %>
+<br>
+<br>
+<%= link_to "Add a new Child", new_mom_child_path(@mom.id) %>

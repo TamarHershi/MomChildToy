@@ -1,0 +1,18 @@
+<%= form_for @child do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name, :required => true %>
+	<br>
+  <%= f.label :age %>:
+  <%= f.text_field :age, :required => true, :numericality => {:only_integer => true} %>
+  <br>
+  <%= f.label 'Girl' %>
+  <%= f.radio_button :gender, 'female', checked: true %>
+  <br>
+  <%= f.label 'Boy' %>
+  <%= f.radio_button :gender, 'male' %>
+  <br>
+	<%= f.hidden_field :mom_id, value: @mom.id %>
+
+
+  <%= @child.persisted? ? (f.submit value: "Update child", id: 'special-button') : (f.submit value: "Add child", id: 'special-button') %>
+<% end %>
