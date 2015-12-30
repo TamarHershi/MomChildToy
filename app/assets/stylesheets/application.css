@@ -73,7 +73,7 @@
  }
 
 #show_child {
-  background-image: image-url('Children.jpg');
+  background-image: url('Children.jpg');
   background-size: 1400px;
  background-repeat: no-repeat;
  }
