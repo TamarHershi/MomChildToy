@@ -63,7 +63,7 @@
  }
 
  .home {
-   background: image-url('mom_baby3.jpg');
+   background-image: url('mom_baby3.jpg');
    background-size: 1550px 900px;
   background-repeat: no-repeat;
  }
@@ -73,7 +73,7 @@
  }
 
 #show_child {
-  background-image: url('Children.jpg');
+  background-image: image-url('Children.jpg');
   background-size: 1400px;
  background-repeat: no-repeat;
  }
